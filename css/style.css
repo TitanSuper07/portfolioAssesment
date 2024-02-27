@@ -1,0 +1,498 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  /* outline: 1px solid red; */
+}
+
+/* Assigning CSS variables */
+:root {
+  --page-Background-color: #141414;
+  --text-color: #ffffff;
+  --underline-color: #4ce19e;
+  --hr-color: #8d8d8d;
+  --footer-color: #242424;
+}
+
+/* classes for display flex and grid and center elements  */
+
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
+}
+.flexDirectionCloumn {
+  flex-direction: column;
+}
+.flexDirectionRow {
+  flex-direction: row;
+}
+.centerVertically {
+  align-items: center;
+}
+
+.centerHorizontally {
+  justify-content: center;
+}
+
+/*************************** Repedeatly used CSS properties********************************/
+.b-bottom {
+  border-bottom: 5px solid var(--underline-color);
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  font-family: "Space Grotesk", sans-serif;
+  background-color: var(--page-Background-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+hr {
+  width: 80%;
+  margin: auto;
+  color: var(--hr-color);
+}
+.onlyForMobile {
+  display: none;
+}
+/* ********************NavBar************************** */
+nav {
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  padding: 0 2em;
+}
+.socialMediaIconList {
+  gap: 25px;
+}
+.twitterLogo {
+  fill: white;
+}
+
+/* ************************Content Of Hero Section******************************** */
+
+.heroSection {
+  padding: 2rem 4.5rem;
+  background: url(../assets/logosAndIcons/pattern-rings.svg) -20% 11% / 32% 16% no-repeat,
+    url(../assets/logosAndIcons/pattern-circle.svg) 103% 66% / 9% 14% no-repeat;
+}
+.contentOfHeroSection {
+  /* gap: 2rem; */
+  box-sizing: border-box;
+}
+.content {
+  width: 50%;
+  min-height: 100vh;
+  /* flex: 1; */
+  height: 80%;
+  gap: 3.8rem;
+  padding: 6rem 0 0 4rem;
+}
+.content > p {
+  width: 100%;
+  font-size: 1.3rem;
+}
+.niceTo {
+  display: block;
+}
+.profileIMageDesktop {
+  /* flex: 1; */
+  width: 50%;
+  background: url(../assets/desktopImages/image-profile-desktop.webp) no-repeat
+    center/contain;
+  position: relative;
+  top: -6.5vw;
+  z-index: -1;
+}
+.profileIMageDesktop img {
+  max-width: 100%;
+}
+.content .mainHeading {
+  font-size: 5rem;
+  width: 100%;
+  line-height: 1.06;
+}
+
+.contactMeBtn {
+  /* given the width max-content because otherwise due to flex it's taking 100% width */
+  width: max-content;
+  padding-bottom: 5px;
+  /* border-bottom: 1px solid var(--underline-color); */
+  font-size: 1.3rem;
+  margin: 2rem 2rem 0 0;
+  position: relative;
+  cursor: pointer;
+}
+
+
+.contactMeBtn:before {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: var(--underline-color);
+  top: 100%;
+  transition: all ease 0.5s;
+}
+.contactMeBtn:hover::before {
+  width: 100%;
+}
+/* ****************************************Skill Section********************************************** */
+
+.skillSection {
+  width: 100%;
+  min-height: 10rem;
+  background: url(../assets/logosAndIcons/pattern-rings.svg) no-repeat 117% 92%/
+    30% 27%;
+}
+
+.skillCardsContainer {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 2rem;
+  margin: auto;
+  height: 100%;
+  width: 79.5%;
+  /* justify-items: center; */
+  padding: 4rem 0;
+}
+
+.skillCard {
+  line-height: 2;
+  text-align: left;
+  position: relative;
+}
+
+.skillCard h2 {
+  font-size: 2.3rem;
+}
+.skillCard p {
+  font-size: 1.09rem;
+}
+
+/* ************************Project Section**************************************** */
+.projectSection {
+  width: 100vw;
+  height: max-content;
+  gap: 4rem;
+  margin: 3rem 0;
+}
+
+.headingAndContatcMeContainer {
+  width: 80%;
+  height: max-content;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headingAndContatcMeContainer .contactMeBtn {
+  margin-top: 2rem;
+}
+.headingAndContatcMeContainer h3 {
+  font-size: 5rem;
+}
+.projectConatiner {
+  width: 80%;
+  /* height: 60vh; */
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 3rem;
+}
+.projectCard p:nth-of-type(1) {
+  margin: 20px 0;
+  font-weight: bold;
+  font-size: 1.34rem;
+}
+.projectCard {
+  position: relative;
+}
+.projectCard img {
+  max-width: 95%;
+}
+.projectCard:hover .hoveringAnimationContainer {
+  opacity: 1;
+}
+.hoveringAnimationContainer {
+  position: absolute;
+  height: 83%;
+  opacity: 0;
+  width: 95%;
+  top: 0;
+  left: 0;
+  background-color: rgba(60, 60, 61, 0.767);
+  transition: all ease 0.5s;
+}
+.hoveringAnimationContainer p {
+  font-size: 1.4rem;
+  font-weight: normal;
+  border-bottom: 2px solid var(--underline-color);
+  padding-bottom: 10px;
+}
+
+/* ********************************footer************************************ */
+footer {
+  margin: 3rem 0;
+  background: var(--footer-color) url(../assets/logosAndIcons/pattern-rings.svg)
+    no-repeat -11% 60%/ 27% 17%;
+  height: 25rem;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5rem 0;
+}
+
+footer .conatctContainer h3 {
+  font-size: 4rem;
+}
+.footerContent {
+  width: 90%;
+  margin: 0 auto 3rem auto;
+  justify-content: space-evenly;
+}
+footer p {
+  line-height: 1.8;
+}
+.conatctContainer {
+  padding-left: 4rem;
+}
+.conatctContainer p {
+  width: 65%;
+}
+.messageContainer {
+  text-align: center;
+  gap: 20px;
+  padding: 3rem 10rem 0 0;
+}
+.messageContainer p {
+  width: 65%;
+}
+.messageContainer h3 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--underline-color);
+  width: max-content;
+  margin: auto;
+  padding-bottom: 10px;
+}
+
+.footerBar {
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  padding: 0 2em;
+}
+.procectActionBtnContainer {
+  display: none;
+}
+/* ****************************************************Media Queries Start from here ******************************************** */
+
+/***************************************** Media Queries for tablet*************************** */
+@media (max-width: 1000px) {
+
+  body{
+    box-sizing: border-box;
+  }
+  hr {
+    /* margin: 0 4rem; */
+  }
+  .content{
+    min-height: 20%;
+  }
+  .heroSection {
+    padding: 2rem 0;
+    background: url(../assets/logosAndIcons/pattern-rings.svg) no-repeat -68% 12%/
+        59% 23%,
+      url(../assets/logosAndIcons/pattern-circle.svg) no-repeat 108% 84%/ 15% 15%;
+  }
+
+  .profileIMageDesktop {
+    /* flex: 1; */
+    width: 50%;
+    background: url(../assets/tabletImages/image-profile-tablet.webp) no-repeat
+      center/contain;
+    position: relative;
+    top: -17.5vw;
+    z-index: -1;
+  }
+  .content {
+    padding: 6rem 0 0 3rem;
+    gap: 3.5rem;
+    /* height: auto; */
+    min-height: auto;
+  }
+  .content p {
+    width: 107%;
+    line-height: 1.8;
+    /* font-size: 1.25rem; */
+  }
+  .content .mainHeading {
+    width: 120%;
+  }
+  .skillSection {
+    background: url(../assets/logosAndIcons/pattern-rings.svg) no-repeat 108%
+      100%/ 46% 22%;
+    padding: 0 4rem;
+    justify-content: start;
+    box-sizing: border-box;
+  }
+
+  .skillCardsContainer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    margin: 0;
+    column-gap: 8rem;
+  }
+  .projectConatiner {
+    width: 80%;
+    justify-content: center;
+    padding-left: 1rem;
+  }
+
+  .footerContent {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .messageContainer {
+    padding: 0;
+  }
+  .conatctContainer,
+  .messageContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0;
+  }
+  .footerBar {
+    margin: 2rem 0;
+  }
+}
+
+/* ********************************Meaid Queries Mobile******************************** */
+
+@media (max-width: 600px) {
+  .onlyForMobile {
+    display: block;
+  }
+  .procectActionBtnContainer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .procectActionBtnContainer p:nth-of-type(1),
+  .procectActionBtnContainer p:nth-of-type(2) {
+    font-size: 1rem;
+    font-weight: normal;
+    display: inline-block;
+    border-bottom: 2px solid var(--underline-color);
+    padding-bottom: 20px;
+  }
+
+  nav {
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .heroSection {
+    margin-bottom: 4rem;
+    background: url(../assets/logosAndIcons/pattern-rings.svg) no-repeat 334%
+        16%/ 121% 14%,
+      url(../assets/logosAndIcons/pattern-circle.svg) no-repeat 120% 45%/ 30% 14%;
+  }
+  .contentOfHeroSection {
+    flex-direction: column-reverse;
+    min-height: 100vh;
+  }
+  .profileIMageDesktop {
+    height: 30rem;
+    width: 100%;
+    background: url(../assets/mobileImages/image-profile-mobile.webp) no-repeat
+      center/contain;
+  }
+  .content {
+    width: 100%;
+    gap: 2rem;
+    height: 20rem;
+    padding: 0;
+    align-items: center;
+    text-align: center;
+  }
+  .content .mainHeading {
+    width: 80%;
+    font-size: 2rem;
+  }
+  .content p:nth-of-type(1) {
+    width: 90%;
+  }
+  .content .contactMeBtn p {
+    width: 100%;
+    font-size: 1.3rem;
+  }
+
+  .content .mainHeading {
+    width: 75%;
+    line-height: 1.3;
+  }
+  .niceTo {
+    display: inline-block;
+  }
+  .skillSection {
+    background: url(../assets/logosAndIcons/pattern-rings.svg) no-repeat 473%
+      99%/ 88% 14%;
+  }
+  .skillCardsContainer {
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .skillCard {
+    text-align: center;
+  }
+  .projectSection {
+    margin: 3rem 0;
+  }
+  .projectConatiner {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    width: 97%;
+    padding-left: 2rem;
+    box-sizing: border-box;
+  }
+  .headingAndContatcMeContainer {
+    width: 85%;
+    padding-left: 1.2rem;
+  }
+  .headingAndContatcMeContainer .contactMeBtn {
+    margin: 0;
+  }
+  .headingAndContatcMeContainer h3 {
+    font-size: 2.5rem;
+  }
+  footer {
+    height: auto;
+    margin: 3rem 0 0 0;
+  }
+  footer .conatctContainer h3 {
+    font-size: 2.5rem;
+  }
+  .conatctContainer {
+    gap: 15px;
+  }
+  .conatctContainer p,
+  .messageContainer p {
+    width: 90%;
+  }
+  .footerBar {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+}
